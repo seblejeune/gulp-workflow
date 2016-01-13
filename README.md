@@ -225,4 +225,4 @@ var src    = './source/',
 ```
 
 ##License
-The code is available under the [MIT License](https://github.com/<%= userName %>/<%= appNameSlug %>/LICENSE).
+The code is available under the [<%= license %> License](https://github.com/<%= userName %>/<%= appNameSlug %>/LICENSE).
