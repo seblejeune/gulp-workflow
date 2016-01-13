@@ -21,11 +21,43 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
+    <% if (cssFramework === 'foundation-sites') { %> 
     "foundation-sites": "~6.0.5",
+    <% } else if (cssFramework === 'foundation-apps') { %>
+    "foundation-apps": "~1.2.0",
+    <% } else if (cssFramework === 'bootstrap') { %>
+    "bootstrap": "~3.3.6",
+    <% } else if (cssFramework === 'bootstrap v4.0.0-alpha') { %>
     "bootstrap": "https://github.com/twbs/bootstrap/archive/v4.0.0-alpha.zip",
+    <% } else {} %>
     "font-awesome": "~4.5.0"
   },
   "overrides": {
+    <% if (cssFramework === 'foundation-sites') { %>
+    "foundation-sites": {
+      "main": [
+        "scss/**/*.scss",
+        "dist/foundation.css",
+        "dist/*.js"
+      ]
+    },
+    <% } else if (cssFramework === 'foundation-apps') { %>
+    "foundation-apps": {
+      "main": [
+        "scss/**/*.scss",
+        "dist/css/foundation-apps.css",
+        "dist/js/*.js"
+      ]
+    },
+    <% } else if (cssFramework === 'bootstrap') { %>
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js",
+        "dist/js/bootstrap.min.js"
+      ]
+    },
+    <% } else if (cssFramework === 'bootstrap v4.0.0-alpha') { %>
     "bootstrap": {
       "main": [
         "scss/**/*.scss",
@@ -34,13 +66,7 @@
         "dist/js/bootstrap.min.js"
       ]
     },
-    "foundation-sites": {
-      "main": [
-        "scss/**/*.scss",
-        "dist/foundation.css",
-        "dist/*.js"
-      ]
-    },
+    <% } else {} %>
     "jquery": {
       "main": [
         "dist/jquery.js",
