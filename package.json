@@ -4,14 +4,14 @@
   "description": "<%= appDescription %>",
   "main": "gulpfile.js",
   "author": {
-	"name": "<%= authorName %>",
-  "email": "<%= authorEmail %>",
-	"url": "<%= authorUrl %>"
+  	"name": "<%= authorName %>",
+    "email": "<%= authorEmail %>",
+  	"url": "<%= authorUrl %>"
   },
   "license": "<%= license %>",
   "repository": {
-	"type": "git",
-	"url": "https://github.com/<%= userName %>/<%= appNameSlug %>.git"
+  	"type": "git",
+  	"url": "https://github.com/<%= userName %>/<%= appNameSlug %>.git"
   },
   "devDependencies": {
     "browser-sync": "^2.11.0",
