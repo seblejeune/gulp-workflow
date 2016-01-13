@@ -8,10 +8,10 @@
   "email": "<%= authorEmail %>",
 	"url": "<%= authorUrl %>"
   },
-  "license": "MIT",
+  "license": "<%= license %>",
   "repository": {
 	"type": "git",
-	"url": "https://github.com/mohamdio/gulp-workflow"
+	"url": "https://github.com/<%= userName %>/<%= appNameSlug %>.git"
   },
   "devDependencies": {
     "browser-sync": "^2.11.0",
