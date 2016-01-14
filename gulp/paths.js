@@ -37,8 +37,6 @@ module.exports = {
             vendor: src + 'scss/vendor/lib/',
             <% if (cssFramework === 'foundation-sites') { %>
             foundation: src + 'scss/vendor/lib/foundation-sites/scss',
-            <% } else if (cssFramework === 'foundation-apps') { %>
-            foundation: src + 'scss/vendor/lib/foundation-apps/scss',
             <% } else if (cssFramework === 'bootstrap v4.0.0-alpha') { %>
             bootstrap: src + 'scss/vendor/lib/bootstrap/scss',
             <% } else {} %>
