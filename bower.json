@@ -20,7 +20,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
     <% if (cssFramework === 'foundation-sites') { %> 
     "foundation-sites": "~6.0.5",
     <% } else if (cssFramework === 'foundation-apps') { %>
@@ -30,7 +29,28 @@
     <% } else if (cssFramework === 'bootstrap v4.0.0-alpha') { %>
     "bootstrap": "https://github.com/twbs/bootstrap/archive/v4.0.0-alpha.zip",
     <% } else {} %>
-    "font-awesome": "~4.5.0"
+    <% if (fontAwesome) { %>
+    "font-awesome": "~4.5.0",
+    <% } %>
+    <% if (foundationIconFonts) { %>
+    "foundation-icon-fonts": "*",
+    <% } %>
+    <% if (ionicons) { %>
+    "ionicons": "~2.0.1",
+    <% } %>
+    <% if (icoMoon) { %>
+    "icomoon": "~0.1.0",
+    <% } %>
+    <% if (octicons) { %>
+    "octicons": "~3.3.0",
+    <% } %>
+    <% if (typicons) { %>
+    "typicons": "~2.0.7",
+    <% } %>
+    <% if (devicons) { %>
+    "devicons": "~1.8.0",
+    <% } %>
+    "jquery": "~2.1.4"
   },
   "overrides": {
     <% if (cssFramework === 'foundation-sites') { %>
@@ -67,17 +87,40 @@
       ]
     },
     <% } else {} %>
-    "jquery": {
-      "main": [
-        "dist/jquery.js",
-        "dist/jquery.min.js"
-      ]
-    },
+    <% if (fontAwesome) { %>
     "font-awesome": {
       "main": [
         "scss/**/*.scss",
         "css/font-awesome.css",
         "fonts/**/*"
+      ]
+    },
+    <% } %>
+    <% if (foundationIconFonts) { %>
+    "foundation-icon-fonts": {
+      "main": [
+        "foundation-icons.{css,svg,ttf,eot,woff}"
+      ]
+    },
+    <% } %>
+    <% if (octicons) { %>
+    "octicons": {
+      "main": [
+        "octicons/octicons.{css,svg,ttf,eot,woff}"
+      ]
+    },
+    <% } %>
+    <% if (typicons) { %>
+    "typicons": {
+      "main": [
+        "src/font/typicons.{css,svg,ttf,eot,woff}"
+      ]
+    },
+    <% } %>
+    "jquery": {
+      "main": [
+        "dist/jquery.js",
+        "dist/jquery.min.js"
       ]
     }
   }
