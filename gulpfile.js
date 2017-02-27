@@ -40,8 +40,8 @@
 
 // main gulp plugins
 var gulp     = require('gulp-help')(require('gulp')),
-    path     = require('./gulp/paths.js'),
-    config   = require('./gulp/config.js'),
+    path     = require('./tools/gulp/paths.js'),
+    config   = require('./tools/gulp/config.js'),
     sequence = require('run-sequence'),
     $        = require('gulp-load-plugins')({
         // used for all plugins type not just with gulp-*
@@ -52,7 +52,7 @@ var gulp     = require('gulp-help')(require('gulp')),
     });
 
 // require all tasks : gulp-load-subtasks
-$.loadSubtasks('./gulp/tasks/**/*.js', $, path, config);
+$.loadSubtasks('./tools/gulp/tasks/**/*.js', $, path, config);
 
 // common default tasks : for dev mode
 gulp.task('default', 'common default tasks for dev mode', function(cb) {

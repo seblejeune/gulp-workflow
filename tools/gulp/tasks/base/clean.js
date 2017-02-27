@@ -29,7 +29,7 @@ module.exports = function(gulp, $, path, config) {
 
         return $.del([
             path.to.dist.prod
-        ]);
+        ], {force: true});
 
     });
 
@@ -41,7 +41,7 @@ module.exports = function(gulp, $, path, config) {
             // this file created from images:favicons task
             // in source/templates/includes/ >> default [favicons.nunjucks]
             config.images.faviconsOptions.html
-        ]);
+        ], {force: true});
 
     });
 

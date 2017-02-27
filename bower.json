@@ -2,10 +2,11 @@
   "name": "Gulpfile Setup",
   "description": "",
   "authors": [
-    "mohamdio"
+    "mohamdio",
+    "seblejeune"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/mohamdio/gulpfile-setup",
+  "homepage": "https://github.com/seblejeune/gulpfile-setup",
   "moduleType": [],
   "private": true,
   "ignore": [

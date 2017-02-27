@@ -7,7 +7,6 @@ bower_components
 
 # project directory
 /build/
-/source/
 /test/
 
 # logs

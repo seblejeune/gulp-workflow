@@ -1,9 +1,11 @@
 // gulp/paths.js
 'use strict';
 
+const fromRoot = require('../utils/from-root');
+
 // base paths
-var src    = './source/',
-    dist   = './build/',
+var src    = fromRoot('src/'),
+    dist   = fromRoot('build/'),
     dev    = 'dev/',
     prod   = 'prod/',
     assets = 'assets/';

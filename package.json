@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/seblejeune/gulp-workflow.git"
   },
+  "scripts": {
+    "clean-install": "rm -rf node_modules && rm -rf bower_components && npm install && bower install"
+  },
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "browserify": "^14.1.0",
@@ -47,6 +50,7 @@
     "lazypipe": "^1.0.1",
     "lodash.assign": "^4.2.0",
     "main-bower-files": "^2.13.1",
+    "path": "^0.12.7",
     "run-sequence": "^1.2.2",
     "sassdoc": "^2.2.0",
     "vinyl-buffer": "^1.0.0",

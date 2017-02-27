@@ -4,6 +4,7 @@
 // require gulp-util & paths
 var gutil    = require('gulp-util'),
     path     = require('./paths.js'),
+    fromRoot = require('../utils/from-root'),
     // require for imagemin options
     pngquant = require('imagemin-pngquant');
 
@@ -51,7 +52,12 @@ module.exports = {
     mainBowerFiles: {
         // main options
         options: {
-            base: 'bower_components'
+            paths: {
+                bowerDirectory: fromRoot('bower_components'),
+                bowerrc: fromRoot('.bowerrc'),
+                bowerJson: fromRoot('bower.json')
+            },
+            base: fromRoot('bower_components')
         },
         // bower:css rename options
         rename: {
@@ -59,7 +65,7 @@ module.exports = {
             extname: '.scss'
         },
         // watch src
-        watch: ['./bower_components/**', './bower.json']
+        watch: [fromRoot('bower_components/**'), fromRoot('bower.json')]
     },
 
     // nunjucks task options
@@ -174,7 +180,7 @@ module.exports = {
         faviconsOptions: {
             appName: 'Gulpfile Setup',
             appDescription: 'Gulpfile setup',
-            developerName: 'mohamdio',
+            developerName: 'seblejeune',
             developerURL: 'http://mohamd.io/',
             background: '#020307',
             path: 'assets/images/favicons/',

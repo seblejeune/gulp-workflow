@@ -31,14 +31,13 @@ module.exports = function(gulp, $, path, config) {
             path.to.js.vendor + '**/*',
             path.to.sass.vendor,
             path.to.fonts.vendor + '**/*'
-        ]);
+        ], {force: true});
 
     });
 
     // copy JS files
     gulp.task(config.task.bower + ':js', 'copy js files', function() {
-
-        return gulp.src($.mainBowerFiles('**/*.js'), 
+        return gulp.src($.mainBowerFiles('**/*.js'),
                 config.mainBowerFiles.options // options
             )
             .pipe($.cached('bowerJs')) // start cache
@@ -49,7 +48,6 @@ module.exports = function(gulp, $, path, config) {
 
     // copy SCSS files
     gulp.task(config.task.bower + ':scss', 'copy scss files', function() {
-
         return gulp.src($.mainBowerFiles('**/*.{scss,sass}'),
                 config.mainBowerFiles.options // options
             )
@@ -61,7 +59,7 @@ module.exports = function(gulp, $, path, config) {
     // copy css files
     gulp.task(config.task.bower + ':css', 'copy css files', function() {
 
-        return gulp.src($.mainBowerFiles('**/*.css'), 
+        return gulp.src($.mainBowerFiles('**/*.css'),
                 config.mainBowerFiles.options // options
             )
             .pipe($.cached('bowerCss')) // start cache
@@ -77,7 +75,7 @@ module.exports = function(gulp, $, path, config) {
     // copy fonts
     gulp.task(config.task.bower + ':fonts', 'copy all fonts', function() {
 
-        return gulp.src($.mainBowerFiles('**/*.{svg,ttf,otf,eot,woff,woff2}'), 
+        return gulp.src($.mainBowerFiles('**/*.{svg,ttf,otf,eot,woff,woff2}'),
                 config.mainBowerFiles.options // options
             )
             .pipe($.cached('bowerFonts')) // start cache
@@ -89,7 +87,7 @@ module.exports = function(gulp, $, path, config) {
     gulp.task(config.task.bower, 'copy all bower dependencies to source folder', function(cb) {
 
         $.runSequence(
-            config.task.bower + ':clean', 
+            config.task.bower + ':clean',
             [
                 config.task.bower + ':js',
                 config.task.bower + ':scss',
