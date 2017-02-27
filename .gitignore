@@ -15,4 +15,4 @@ logs
 *.log
 npm-debug.log*
 
-/.idea/
+.idea/
