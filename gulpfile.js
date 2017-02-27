@@ -70,6 +70,19 @@ gulp.task('default', 'common default tasks for dev mode', function(cb) {
     )
 });
 
+gulp.task('travis', 'common default tasks for dev mode', function(cb) {
+    sequence(
+        config.task.clean,
+        config.task.bower,
+        config.task.fonts,
+        config.task.sass,
+        config.task.scripts,
+        config.task.images,
+        config.task.nunjucks,
+        cb
+    )
+});
+
 // build tasks : for prod mode
 gulp.task(config.task.build, 'main build task for prod mode', function(cb) {
     sequence(
